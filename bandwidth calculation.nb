@@ -1,0 +1,209 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7353,        201]
+NotebookOptionsPosition[      6335,        177]
+NotebookOutlinePosition[      6769,        193]
+CellTagsIndexPosition[      6726,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Theoretical", " ", "bandwidth", " ", "calculation"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", " ", "=", 
+     RowBox[{
+      FractionBox["1", "300"], " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f", "=", 
+     RowBox[{"75", " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "2048"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[CapitalDelta]x", "=", 
+     RowBox[{"14", " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "6"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Theta]m", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"W", "=", 
+     RowBox[{"n", " ", "\[CapitalDelta]x"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"d", " ", "=", " ", 
+     FractionBox["m", 
+      RowBox[{"a", " ", 
+       RowBox[{"Cos", "[", "\[Theta]m", "]"}]}]]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"bandwidth", " ", "=", " ", 
+    FractionBox["W", 
+     RowBox[{"f", " ", "d"}]]}], "\[IndentingNewLine]", 
+   RowBox[{"N", "[", "bandwidth", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8952000467612453`*^9, 3.895200272647277*^9}, {
+  3.8952025487944794`*^9, 
+  3.895202560253746*^9}},ExpressionUUID->"b9410041-aade-44fc-a09d-\
+640404251c85"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["112", "87890625"], "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.895200192974868*^9, {3.895200232863282*^9, 3.895200274047343*^9}},
+ CellLabel->"Out[44]=",ExpressionUUID->"770ff863-af58-433a-9bba-e4b907ca61b8"],
+
+Cell[BoxData[
+ TemplateBox[{"1.274311111111111`*^-6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.895200192974868*^9, {3.895200232863282*^9, 3.895200274057376*^9}},
+ CellLabel->"Out[45]=",ExpressionUUID->"c9af7368-4fe7-4d4b-b46e-e1fa75a53ea1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Theoretical", " ", "resolution", " ", "calculation"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dSlit", "=", 
+     RowBox[{"50", " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "6"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dPix", "=", 
+     RowBox[{"14", " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "6"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f", "=", 
+     RowBox[{"75", " ", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]], 
+      RowBox[{"Quantity", "[", "\"\<Meters\>\"", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"d", "=", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["10", "5"], 
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", "/", "\"\<Meters\>\""}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"resolution", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"dSlit", "+", "dPix"}], 
+     RowBox[{"f", " ", "d"}]]}], "\[IndentingNewLine]", 
+   RowBox[{"N", "[", "resolution", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.895202563440879*^9, 3.8952025835998726`*^9}, {
+   3.8952027120539627`*^9, 3.895202792747387*^9}, {3.8952037972221518`*^9, 
+   3.8952038202997108`*^9}, {3.8952045634764366`*^9, 3.895204715055707*^9}, {
+   3.8952049905873947`*^9, 3.89520499100725*^9}, {3.8952050282513466`*^9, 
+   3.8952050526006536`*^9}, 3.8952051034807434`*^9, {3.8952051804672356`*^9, 
+   3.895205205669347*^9}, {3.895205283607005*^9, 3.895205283741951*^9}, {
+   3.8952053867642636`*^9, 3.895205415758336*^9}},
+ CellLabel->
+  "In[174]:=",ExpressionUUID->"d7439529-5aaf-485c-83ad-de1efbbf0c28"],
+
+Cell[BoxData[
+ TemplateBox[{"300000", 
+   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"meter\""}], 
+   "reciprocal meters", 
+   FractionBox["1", "\"Meters\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.895204590721875*^9, 3.8952046193095207`*^9}, 
+   3.895204673186838*^9, {3.8952047053010063`*^9, 3.8952047158250885`*^9}, {
+   3.895205030579517*^9, 3.895205052990651*^9}, 3.895205104011034*^9, {
+   3.8952051807870274`*^9, 3.8952052066978426`*^9}, 3.89520528419985*^9, 
+   3.8952054171231165`*^9},
+ CellLabel->
+  "Out[177]=",ExpressionUUID->"620db38d-6b21-4072-a013-b0ac0b3538c5"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["1", "351562500"], "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.895204590721875*^9, 3.8952046193095207`*^9}, 
+   3.895204673186838*^9, {3.8952047053010063`*^9, 3.8952047158250885`*^9}, {
+   3.895205030579517*^9, 3.895205052990651*^9}, 3.895205104011034*^9, {
+   3.8952051807870274`*^9, 3.8952052066978426`*^9}, 3.89520528419985*^9, 
+   3.8952054171431456`*^9},
+ CellLabel->
+  "Out[178]=",ExpressionUUID->"daa089b7-44d7-45ac-a387-a913650fbd21"],
+
+Cell[BoxData[
+ TemplateBox[{"2.8444444444444444`*^-9", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.895204590721875*^9, 3.8952046193095207`*^9}, 
+   3.895204673186838*^9, {3.8952047053010063`*^9, 3.8952047158250885`*^9}, {
+   3.895205030579517*^9, 3.895205052990651*^9}, 3.895205104011034*^9, {
+   3.8952051807870274`*^9, 3.8952052066978426`*^9}, 3.89520528419985*^9, 
+   3.8952054171631165`*^9},
+ CellLabel->
+  "Out[179]=",ExpressionUUID->"301112dd-7798-4e87-a9be-8897237b6838"]
+}, Open  ]]
+},
+WindowSize->{571.1999999999999, 579.6},
+WindowMargins->{{Automatic, -1.2000000000000455`}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ff18653e-e102-4495-96ea-5bf72a2575f1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1707, 50, 277, "Input",ExpressionUUID->"b9410041-aade-44fc-a09d-640404251c85"],
+Cell[2290, 74, 293, 6, 57, "Output",ExpressionUUID->"770ff863-af58-433a-9bba-e4b907ca61b8"],
+Cell[2586, 82, 283, 5, 39, "Output",ExpressionUUID->"c9af7368-4fe7-4d4b-b46e-e1fa75a53ea1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2906, 92, 1777, 45, 163, "Input",ExpressionUUID->"d7439529-5aaf-485c-83ad-de1efbbf0c28"],
+Cell[4686, 139, 587, 12, 39, "Output",ExpressionUUID->"620db38d-6b21-4072-a013-b0ac0b3538c5"],
+Cell[5276, 153, 524, 10, 57, "Output",ExpressionUUID->"daa089b7-44d7-45ac-a387-a913650fbd21"],
+Cell[5803, 165, 516, 9, 39, "Output",ExpressionUUID->"301112dd-7798-4e87-a9be-8897237b6838"]
+}, Open  ]]
+}
+]
+*)
+
